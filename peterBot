@@ -1,0 +1,55 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PETER THE BOT                                                                 "
+" This is an extremely basic tool used to converse with the computer.           "
+" Simply requests name, then asks for mood. Responds based on mood.             "
+" Asks for your favourite teacher, if Mr Shirlaw, agrees.                       "
+" Author: Josh Howard                                                           "
+" Date: 15/02/2013                                                              "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ 
+# Imports Terminal Commands(?) in order to use the clear command.
+import os
+
+# Clears terminal window.
+os.system("clear")
+ 
+# Greets the user, introducing the AI. Records name.
+name = raw_input("\nHello, my name is Peter. What is your name? ")
+ 
+# Gets mood.
+mood = raw_input("\nHeya %s! Great to meet you. How are you feeling? " %name)
+ 
+# Replies based on response.
+### If mood is positive, gives a positive response.
+if mood in ('good','Good','ok','Ok','fine','Fine','great','Great','Great!','Good.'):
+      print "\nThat's good to hear, I'm doing great myself!"
+### If mood is negative, gives negative / sympathetic response.
+elif mood in ('bad','Bad','horrible','Horrible','crap','Crap','sad','Sad','depressed','Depressed','hurt','Hurt'):
+    print "\nAw, that's a shame. I'm sorry to hear."
+### Gives generic response, if variable isn't listed.  
+else:
+    print "\nAh, okay!"
+
+# Finds the name of user's favourite teacher.  
+faveteach = raw_input("\nSo... who is your favourite teacher? ")
+
+# If they say Mr Shirlaw, Peter will agree.
+if faveteach in ('Mr Shirlaw','mr shirlaw','shirlaw','Shirlaw','Mister Shirlaw','Mr. Shirlaw','Mr. Shirlaw.','Mr Shirlaw.'):
+    print "\nCool! I like Mr Shirlaw too!"
+
+# For the "smart" user, recognises their response properly.	
+elif faveteach in ('none','noone','no one','nobody'):
+    print "\nDon't be cheeky, surely you like one of the teachers!"	
+	
+# If they like any other teacher, Peter will say that teacher is nice and name Mr Shirlaw as his favourite teacher.	
+else:
+    print "\n%s is nice. My favourite teacher is Mr Shirlaw!" %faveteach
+	
+# Says bye.
+bye = raw_input("\nHm... I best get going, see you later! ")
+
+if bye in ('x'):
+    print "\nSeeya later, %s!" %name
+	
+else:
+    print "\nSeeya later, %s!" %name
